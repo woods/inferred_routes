@@ -19,6 +19,7 @@
                 #{generate_optimisation_block(route, kind)}
 
                 keys = #{route.segment_keys.inspect}
+                keys.delete_if { |k| k == :format }
                 opts = if args.empty? || Hash === args.first
                   args.first || {}
                 else
